@@ -1,0 +1,103 @@
+[gd_scene load_steps=13 format=3 uid="uid://cl5uelqpwkok3"]
+
+[ext_resource type="Theme" uid="uid://6yxkps86rgil" path="res://main_theme.tres" id="1_aklc3"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_ui.gd" id="2_j2guy"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_state_machine.gd" id="3_hoyt7"]
+[ext_resource type="Texture2D" uid="uid://c7caqfn3ptqgn" path="res://SinCards/creeping_ice_card.png" id="3_mt77w"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_states/card_base_state.gd" id="4_7i1s8"]
+[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="4_vr1rl"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_states/card_clicked_state.gd" id="5_oiqhe"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_states/card_dragging_state.gd" id="6_3drpb"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_states/card_release_state.gd" id="7_21i5i"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_states/card_aiming_state.gd" id="8_kug4y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vmbhs"]
+bg_color = Color(0.219608, 0.639216, 0.890196, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_inxlp"]
+size = Vector2(250, 350)
+
+[node name="CardUI" type="Control"]
+custom_minimum_size = Vector2(250, 350)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 75.0
+offset_bottom = 90.0
+size_flags_horizontal = 0
+theme = ExtResource("1_aklc3")
+script = ExtResource("2_j2guy")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vmbhs")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_mt77w")
+expand_mode = 1
+
+[node name="Cost" type="Label" parent="."]
+layout_mode = 1
+offset_left = 199.0
+offset_top = 284.0
+offset_right = 224.0
+offset_bottom = 309.0
+theme_override_colors/font_color = Color(0.811765, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_vr1rl")
+theme_override_font_sizes/font_size = 20
+text = "2
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DropPointDetector" type="Area2D" parent="."]
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
+position = Vector2(125, 175)
+shape = SubResource("RectangleShape2D_inxlp")
+
+[node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_hoyt7")
+initial_state = NodePath("CardBaseState")
+
+[node name="CardBaseState" type="Node" parent="CardStateMachine"]
+script = ExtResource("4_7i1s8")
+
+[node name="CardClickedState" type="Node" parent="CardStateMachine"]
+script = ExtResource("5_oiqhe")
+state = 1
+
+[node name="CardDraggingState" type="Node" parent="CardStateMachine"]
+script = ExtResource("6_3drpb")
+state = 2
+
+[node name="CardReleaseState" type="Node" parent="CardStateMachine"]
+script = ExtResource("7_21i5i")
+state = 4
+
+[node name="CardAimingState" type="Node" parent="CardStateMachine"]
+script = ExtResource("8_kug4y")
+state = 3
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="DropPointDetector" to="." method="_on_drop_point_detector_area_entered"]
+[connection signal="area_exited" from="DropPointDetector" to="." method="_on_drop_point_detector_area_exited"]

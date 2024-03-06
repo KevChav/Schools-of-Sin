@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://ds8je0dxxylg3"]
+
+[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_2r6it"]
+[ext_resource type="Texture2D" uid="uid://bo77w3k6lca2h" path="res://SinCards/fire_up_card.png" id="1_wsqdo"]
+
+[resource]
+script = ExtResource("1_2r6it")
+id = "warrior_block"
+type = 1
+target = 0
+cost = 1
+icon = ExtResource("1_wsqdo")
+tooltip_text = ""

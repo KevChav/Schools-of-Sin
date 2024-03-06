@@ -1,0 +1,5 @@
+res://scenes/battle/battle.tscn
+res://characters/warrior/cards/warrior_axe_attack.tres
+res://characters/warrior/cards/warrior_block.tres
+res://characters/warrior/warrior_starting_deck.tres
+res://scenes/enemy/enemy.tscn
