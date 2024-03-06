@@ -39,7 +39,7 @@ scale = Vector2(12, 12)
 stats = ExtResource("3_b87xs")
 
 [node name="Player" parent="." instance=ExtResource("3_um2tq")]
-position = Vector2(513, 659)
+position = Vector2(538, 659)
 scale = Vector2(12, 12)
 stats = ExtResource("4_8ekuv")
 
