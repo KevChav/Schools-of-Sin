@@ -17,3 +17,9 @@ res://scenes/ui/mana_ui.gd
 res://custom_resources/effect.gd
 res://effects/block_effect.gd
 res://effects/damage_effect.gd
+res://custom_resources/card.gd
+res://global/events.gd
+res://characters/warrior/cards/warrior_axe_attack.gd
+res://characters/warrior/cards/warrior_block.gd
+res://scenes/card_ui/card_states/card_release_state.gd
+res://scenes/ui/hand.gd
