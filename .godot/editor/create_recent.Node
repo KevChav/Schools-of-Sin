@@ -1,7 +1,11 @@
+RichTextLabel
+TextureRect
+VBoxContainer
+MarginContainer
+PanelContainer
 Label
 Panel
 Node
-TextureRect
 ColorRect
 Sprite2D
 HBoxContainer

@@ -8,6 +8,7 @@ func enter() -> void:
 	card_ui.panel.set("theme_override_styles/panel", card_ui.BASE_STYLE)
 	card_ui.reparent_requested.emit(card_ui) #can arrive from drag or release outside zone
 	card_ui.pivot_offset = Vector2.ZERO #drag card on cursor placement
+	Events.tooltip_hide_requested.emit() #hide any tooltip
 	
 func on_gui_input(event: InputEvent) -> void:
 	if not card_ui.playable or card_ui.disabled:
@@ -19,8 +20,10 @@ func on_mouse_entered() -> void:
 	if not card_ui.playable or card_ui.disabled:
 		return
 	card_ui.panel.set("theme_override_styles/panel", card_ui.HOVER_STYLE)
-	
+	Events.card_tooltip_requested.emit(card_ui.card.icon, card_ui.card.tooltip_text)#show tooltip on hover
 func on_mouse_exited() -> void:
 	if not card_ui.playable or card_ui.disabled:
 		return
 	card_ui.panel.set("theme_override_styles/panel", card_ui.BASE_STYLE)
+	Events.tooltip_hide_requested.emit()
+	

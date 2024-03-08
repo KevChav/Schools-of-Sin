@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dd3erfmjuhrib"]
+[gd_scene load_steps=14 format=3 uid="uid://dd3erfmjuhrib"]
 
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/background.png" id="1_lmgya"]
 [ext_resource type="PackedScene" uid="uid://cl5uelqpwkok3" path="res://scenes/card_ui/card_ui.tscn" id="2_0tcjs"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://df254bf16wkft" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="5_6vyc6"]
 [ext_resource type="Resource" uid="uid://ds8je0dxxylg3" path="res://characters/warrior/cards/warrior_block.tres" id="6_r08fo"]
 [ext_resource type="PackedScene" uid="uid://dej541y5td8fk" path="res://scenes/ui/mana_ui.tscn" id="11_eium2"]
+[ext_resource type="PackedScene" uid="uid://dilfhkq5qob7s" path="res://scenes/ui/tooltip.tscn" id="12_ql2lc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fv2ii"]
 size = Vector2(256, 100)
@@ -85,3 +86,9 @@ char_stats = ExtResource("4_8ekuv")
 
 [node name="ManaUI" parent="BattleUI" instance=ExtResource("11_eium2")]
 char_stats = ExtResource("4_8ekuv")
+
+[node name="Tooltip" parent="." instance=ExtResource("12_ql2lc")]
+offset_left = 852.0
+offset_top = 101.0
+offset_right = 1581.0
+offset_bottom = 347.0

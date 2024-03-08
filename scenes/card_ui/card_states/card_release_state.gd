@@ -6,6 +6,7 @@ var played: bool
 func enter() -> void:
 	played = false
 	if not card_ui.targets.is_empty(): #check if the card is in the zone
+		Events.tooltip_hide_requested.emit()
 		played = true
 		card_ui.play() 
 		print("Play card for target(s)", card_ui.targets)
