@@ -1,8 +1,8 @@
+Label
+Panel
 Node
 TextureRect
 ColorRect
-Label
-Panel
 Sprite2D
 HBoxContainer
 CanvasLayer

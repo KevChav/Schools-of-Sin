@@ -6,7 +6,7 @@ func enter() -> void:
 	if ui_layer:
 		card_ui.reparent(ui_layer)
 	
-	
+	card_ui.panel.set("theme_override_styles/panel", card_ui.DRAG_STYLE)
 	min_drag_time = false
 	var threshold_timer := get_tree().create_timer(DRAG_MIN, false)
 	threshold_timer.timeout.connect(func(): min_drag_time = true) #lets you drag for a moment before release

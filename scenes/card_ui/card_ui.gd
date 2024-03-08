@@ -3,7 +3,12 @@ extends Control
 
 signal reparent_requested(which_card_ui: CardUI)
 
-@export var card: Card : set = _set_card
+const BASE_STYLE := preload("res://scenes/card_ui/card_base_style.tres")
+const DRAG_STYLE := preload("res://scenes/card_ui/card_dragging_style.tres")
+const HOVER_STYLE := preload("res://scenes/card_ui/card_hover_style.tres")
+const EXIT_STYLE := preload("res://scenes/card_ui/card_exit_style.tres")
+
+@export var card: Card : set = _set_card #update the Card visuals by getting data from card.gd
 @onready var panel = $Panel
 @onready var cost = $Cost
 @onready var icon = $Icon
@@ -31,9 +36,9 @@ func _on_mouse_entered() -> void:
 	card_state_machine.on_mouse_entered()
 	
 func _on_mouse_exited() -> void:
-	card_state_machine.on_mouse_entered()
+	card_state_machine.on_mouse_exited()
 	
-func _set_card(value: Card) -> void:
+func _set_card(value: Card) -> void: #updates card ui with correct info 
 	if not is_node_ready():
 		await ready
 	card = value
