@@ -10,8 +10,9 @@ var character: CharacterStats
 func start_battle(char_stats: CharacterStats) -> void:
 	character = char_stats
 	character.draw_pile = character.deck.duplicate(true) #duplicate the char starter deck
+	#into this new draw pile
 	character.draw_pile.shuffle()
-	character.discard = CardPile.new() #empty discard pile
+	character.discard = CardPile.new() #create empty discard pile
 	start_turn()
 	
 func start_turn() -> void: 

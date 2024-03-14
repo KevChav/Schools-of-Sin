@@ -3,7 +3,7 @@ extends Effect
 
 var amount := 0
 
-func execute(targets: Array[Node]) -> void:
+func execute(targets: Array[Node]) -> void: #override the execute func to block
 	for target in targets:
 		if not target:
 			continue
