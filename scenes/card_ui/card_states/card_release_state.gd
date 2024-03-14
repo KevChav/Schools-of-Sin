@@ -9,7 +9,6 @@ func enter() -> void:
 		Events.tooltip_hide_requested.emit()
 		played = true
 		card_ui.play() 
-		print("Play card for target(s)", card_ui.targets)
 		#maybe this can find where to drop the card. Each spell slot can be the card_ui.targets
 		
 		

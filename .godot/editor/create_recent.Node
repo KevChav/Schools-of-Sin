@@ -1,3 +1,4 @@
+Node
 RichTextLabel
 TextureRect
 VBoxContainer
@@ -5,11 +6,9 @@ MarginContainer
 PanelContainer
 Label
 Panel
-Node
 ColorRect
 Sprite2D
 HBoxContainer
 CanvasLayer
 Line2D
 CollisionShape2D
-Area2D

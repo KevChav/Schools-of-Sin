@@ -1,10 +1,10 @@
-res://art
+res://scenes/player
 res://scenes/ui
+res://art
 res://SinCards
 res://
 res://scenes/card_ui
 res://scenes/enemy
-res://scenes/player
 res://characters/warrior
 res://enemies/spider
 res://scenes/card_ui/card_states
