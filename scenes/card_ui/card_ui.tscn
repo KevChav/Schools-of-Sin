@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://6yxkps86rgil" path="res://main_theme.tres" id="1_aklc3"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_ui.gd" id="2_j2guy"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_state_machine.gd" id="3_hoyt7"]
-[ext_resource type="StyleBox" uid="uid://tfe4h33mciwk" path="res://scenes/card_ui/card_exit_style.tres" id="3_l41u4"]
+[ext_resource type="StyleBox" uid="uid://rdqccf8fqm0h" path="res://scenes/card_ui/card_base_style.tres" id="3_jiyqk"]
 [ext_resource type="Texture2D" uid="uid://c7caqfn3ptqgn" path="res://SinCards/creeping_ice_card.png" id="3_mt77w"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_base_state.gd" id="4_7i1s8"]
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="4_vr1rl"]
@@ -33,7 +33,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = ExtResource("3_l41u4")
+theme_override_styles/panel = ExtResource("3_jiyqk")
 
 [node name="Icon" type="TextureRect" parent="."]
 layout_mode = 1
@@ -67,6 +67,7 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
 position = Vector2(125, 175)
 shape = SubResource("RectangleShape2D_inxlp")
+debug_color = Color(0.996078, 0, 0.223529, 0.419608)
 
 [node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_hoyt7")

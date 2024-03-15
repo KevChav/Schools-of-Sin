@@ -12,9 +12,9 @@ const EXIT_STYLE := preload("res://scenes/card_ui/card_exit_style.tres")
 @export var char_stats: CharacterStats : set = _set_char_stats
 
 
-@onready var panel = $Panel
-@onready var cost = $Cost
-@onready var icon = $Icon
+@onready var panel: Panel = $Panel
+@onready var cost: Label = $Cost
+@onready var icon: TextureRect = $Icon
 @onready var drop_point_detector = $DropPointDetector
 @onready var card_state_machine: CardStateMachine = $CardStateMachine as CardStateMachine
 @onready var targets: Array[Node] = []
@@ -32,7 +32,6 @@ func _ready() -> void:
 	Events.card_drag_started.connect(_on_card_drag_or_aiming_started)
 	Events.card_drag_ended.connect(_on_card_drag_or_aim_ended)
 	Events.card_aim_ended.connect(_on_card_drag_or_aim_ended)
-	
 	card_state_machine.init(self)
 	
 func _input(event: InputEvent) -> void:
@@ -72,7 +71,7 @@ func _set_playable(value: bool) -> void:
 		icon.modulate = Color(1, 1, 1, 0.5)
 	else:
 		cost.remove_theme_color_override("font_color")
-		icon.modulate = Color(1, 1, 1, 0.5)
+		icon.modulate = Color(1, 1, 1, 1)
 
 func _set_char_stats(value: CharacterStats) -> void:
 	char_stats = value

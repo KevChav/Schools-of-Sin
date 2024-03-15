@@ -18,6 +18,13 @@ func add_card(card: Card) -> void:
 	new_card_ui.parent = self
 	new_card_ui.char_stats = char_stats
 	
+func discarded_card(card: CardUI) -> void:
+	card.queue_free() #delete card from the scene tree
+	
+func disable_hand() -> void: #this function prevents the player from playing cards at the end of their turn phase
+	for card in get_children():
+		card.disabled = true
+		
 
 func _on_card_played(_card: Card) -> void: 
 	cards_played_this_turn += 1
