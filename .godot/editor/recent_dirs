@@ -1,12 +1,12 @@
+res://scenes/enemy
+res://enemies/spider
+res://art
 res://scenes/card_ui
 res://scenes/player
 res://scenes/ui
-res://art
 res://SinCards
 res://
-res://scenes/enemy
 res://characters/warrior
-res://enemies/spider
 res://scenes/card_ui/card_states
 res://global
 res://scenes/card_target_selector
