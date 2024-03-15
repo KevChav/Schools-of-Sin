@@ -45,7 +45,6 @@ scale = Vector2(12, 12)
 stats = ExtResource("4_8ekuv")
 
 [node name="EnemyHandler" type="Node2D" parent="."]
-scale = Vector2(1, 1)
 script = ExtResource("5_nl7mu")
 
 [node name="Enemy" parent="EnemyHandler" instance=ExtResource("2_tnpvc")]

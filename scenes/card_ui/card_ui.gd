@@ -70,7 +70,7 @@ func _set_playable(value: bool) -> void:
 		cost.add_theme_color_override("font_color", Color.RED)
 		icon.modulate = Color(1, 1, 1, 0.5)
 	else:
-		cost.remove_theme_color_override("font_color")
+		cost.add_theme_color_override("font_color", Color.DODGER_BLUE)
 		icon.modulate = Color(1, 1, 1, 1)
 
 func _set_char_stats(value: CharacterStats) -> void:
