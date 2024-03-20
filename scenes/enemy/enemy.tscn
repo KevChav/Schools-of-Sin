@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://5mtuh1nyjpk5"]
+[gd_scene load_steps=7 format=3 uid="uid://5mtuh1nyjpk5"]
 
 [ext_resource type="Texture2D" uid="uid://ukld5o613i0a" path="res://art/tile_0122.png" id="1_ud8c5"]
 [ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_v0q25"]
 [ext_resource type="Texture2D" uid="uid://bb3rcs5nqntir" path="res://art/arrow.png" id="2_a3eu4"]
 [ext_resource type="PackedScene" uid="uid://db30rgduws7p7" path="res://scenes/ui/stats_ui.tscn" id="3_fsq5x"]
+[ext_resource type="PackedScene" uid="uid://bslkt8ufu6prf" path="res://scenes/ui/intent_ui.tscn" id="5_lclhe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lafub"]
 
@@ -28,6 +29,12 @@ offset_left = -44.0
 offset_top = 7.0
 offset_right = 46.0
 offset_bottom = 23.0
+
+[node name="IntentUI" parent="." instance=ExtResource("5_lclhe")]
+offset_left = -20.0
+offset_top = -27.0
+offset_right = 20.0
+offset_bottom = -12.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

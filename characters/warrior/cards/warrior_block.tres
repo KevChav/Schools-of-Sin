@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://ds8je0dxxylg3"]
 
-[ext_resource type="Texture2D" uid="uid://bo77w3k6lca2h" path="res://SinCards/fire_up_card.png" id="1_wsqdo"]
+[ext_resource type="Texture2D" uid="uid://c5kjkayouhnth" path="res://SinCards/absorb_blow__card.png" id="1_5joub"]
 [ext_resource type="Script" path="res://characters/warrior/cards/warrior_block.gd" id="2_3v6w2"]
 
 [resource]
@@ -9,5 +9,5 @@ id = "warrior_block"
 type = 1
 target = 0
 cost = 1
-icon = ExtResource("1_wsqdo")
+icon = ExtResource("1_5joub")
 tooltip_text = "[center]Gain [color=\"0044ff\"]4[/color] block[/center]"

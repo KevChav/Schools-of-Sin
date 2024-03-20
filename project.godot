@@ -31,6 +31,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="Documents"
 
+[gui]
+
+theme/custom_font="res://main_theme.tres"
+
 [input]
 
 left_mouse={
