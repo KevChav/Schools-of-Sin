@@ -70,12 +70,17 @@ func do_turn() -> void:
 func take_damage(damage: int) -> void:
 	if stats.health <= 0:
 		return
-	stats.take_damage(damage)
-	if stats.health <= 0:
-		queue_free()
-		
 	
+	var tween := create_tween()
+	tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))
+	tween.tween_callback(stats.take_damage.bind(damage))
+	tween.tween_interval(0.2)
 	
+	tween.finished.connect(
+		func():
+			if stats.health <= 0:
+				queue_free()
+	)
 
 
 func _on_area_entered(_area: Area2D) -> void: #card target selector area not used (The parameter "area" is never used in the function "_on_area_exited()". If this is intended, prefix it with an underscore: "_area".)
