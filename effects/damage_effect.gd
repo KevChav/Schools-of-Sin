@@ -8,3 +8,5 @@ func execute(targets: Array[Node]) -> void: #we override the main effect functio
 			continue
 		if target is Enemy or target is Player:
 			target.take_damage(amount)
+			SFXPlayer.play(sound)
+			
