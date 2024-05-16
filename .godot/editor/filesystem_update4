@@ -3,3 +3,10 @@ res://main_theme.tres
 res://characters/warrior/cards/warrior_axe_attack.tres
 res://characters/warrior/cards/warrior_block.tres
 res://characters/warrior/warrior_starting_deck.tres
+res://scenes/ui/battle_over_panel.gd
+res://global/events.gd
+res://scenes/battle/battle.gd
+res://scenes/battle/battle.tscn
+res://scenes/player/player.tscn
+res://scenes/enemy/enemy.tscn
+res://global/music_player.tscn

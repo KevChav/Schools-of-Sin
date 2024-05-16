@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvricw0udun48"]
+[gd_scene load_steps=5 format=3 uid="uid://bvricw0udun48"]
 
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="1_oxqqo"]
+[ext_resource type="Script" path="res://scenes/ui/battle_over_panel.gd" id="1_r1uki"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4gqk"]
 bg_color = Color(0.666667, 0.654902, 0.623529, 0.670588)
@@ -10,12 +11,14 @@ font = ExtResource("1_oxqqo")
 font_size = 196
 
 [node name="BattleOverPanel" type="Panel"]
+process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_i4gqk")
+script = ExtResource("1_r1uki")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

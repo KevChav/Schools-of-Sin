@@ -1,3 +1,4 @@
+CanvasLayer
 Button
 Label
 VBoxContainer
@@ -6,7 +7,6 @@ AudioStreamPlayer
 Node
 Timer
 ColorRect
-CanvasLayer
 TextureRect
 HBoxContainer
 Node2D
