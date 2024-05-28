@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dd3erfmjuhrib"]
+[gd_scene load_steps=20 format=3 uid="uid://dd3erfmjuhrib"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_i5ped"]
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/background.png" id="1_lmgya"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://bdonx08ka67c1" path="res://enemies/spider/spider_enemy.tres" id="5_p44p2"]
 [ext_resource type="Script" path="res://scenes/player/player_handler.gd" id="8_6ip30"]
 [ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="8_k1kin"]
+[ext_resource type="Resource" uid="uid://sbg086b2vcq7" path="res://enemies/bat/bat_enemy.tres" id="9_qqe7i"]
 [ext_resource type="PackedScene" uid="uid://dej541y5td8fk" path="res://scenes/ui/mana_ui.tscn" id="11_eium2"]
 [ext_resource type="PackedScene" uid="uid://dilfhkq5qob7s" path="res://scenes/ui/tooltip.tscn" id="12_ql2lc"]
 [ext_resource type="Theme" uid="uid://6yxkps86rgil" path="res://main_theme.tres" id="13_mrw1e"]
@@ -51,10 +52,15 @@ stats = ExtResource("4_8ekuv")
 [node name="EnemyHandler" type="Node2D" parent="."]
 script = ExtResource("5_nl7mu")
 
-[node name="Enemy" parent="EnemyHandler" instance=ExtResource("2_tnpvc")]
+[node name="CrabEnemy" parent="EnemyHandler" instance=ExtResource("2_tnpvc")]
 position = Vector2(1996, 755)
 scale = Vector2(12, 12)
 stats = ExtResource("5_p44p2")
+
+[node name="BatEnemy" parent="EnemyHandler" instance=ExtResource("2_tnpvc")]
+position = Vector2(1450, 755)
+scale = Vector2(12, 12)
+stats = ExtResource("9_qqe7i")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_yvhu6")]
 

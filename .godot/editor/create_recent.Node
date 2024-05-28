@@ -1,10 +1,10 @@
+Node
 CanvasLayer
 Button
 Label
 VBoxContainer
 Panel
 AudioStreamPlayer
-Node
 Timer
 ColorRect
 TextureRect
